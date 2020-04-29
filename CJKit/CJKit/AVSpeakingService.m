@@ -62,7 +62,7 @@
 
 - (AVSpeakingService *(^)(void))speaking{
     return ^(void){
-        [self speakInfo:_voiceContent];
+        [self speakInfo:self->_voiceContent];
         return self;
     };
 }

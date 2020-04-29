@@ -8,9 +8,6 @@
 
 #import "CJDispatcher+AppDelegate.h"
 
-#import <AppKit/AppKit.h>
-
-
 @implementation CJDispatcher (AppDelegate)
 
 @end

@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "AppDelegate.h"
 
-typedef void (^callback)(id _Nullable result ,NSError *error);
+typedef void (^callback)(id _Nullable result ,NSError * _Nullable error);
 NS_ASSUME_NONNULL_BEGIN
 
 @interface CJDispatcher : NSObject
@@ -20,7 +21,15 @@ NS_ASSUME_NONNULL_BEGIN
 ///方法
 - (CJDispatcher *(^)(void))action;
 ///
-- (CJDispatcher *(^)(NSString *action ,NSDictionary *param,callback cb))dispatch;
+- (CJDispatcher *(^)(NSString *modular ,NSString *sel, NSDictionary *param,callback cb))dispatch;
+///
+
+
+
+
+
+
+
 
 @end
 

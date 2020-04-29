@@ -1,0 +1,20 @@
+platform :ios, "9.0"
+
+#编码规范见本工程文档:README.md
+
+# 指定开源库的下载源（组件化开发时会用到）
+source 'https://cdn.cocoapods.org/'
+#source 'https://github.com/CocoaPods/Specs.git'
+
+
+
+# ignore all warnings from all pods
+inhibit_all_warnings!
+# 使用framework（包含swift库就必须使用此设置，纯OC库可以不设置）
+use_frameworks!
+
+target 'CJKit' do
+    pod 'JCore' 
+    pod 'JPush'
+
+end

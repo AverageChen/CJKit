@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+@import UIKit;
+@import UserNotifications;
 NS_ASSUME_NONNULL_BEGIN
-
-@protocol CJDispatcherAppProtocol <NSObject>
+@protocol CJDispatcherAppProtocol <NSObject,UIApplicationDelegate,UNUserNotificationCenterDelegate>
 
 @end
 

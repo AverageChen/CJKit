@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "CJDispatherProtocol.h"
 NS_ASSUME_NONNULL_BEGIN
 
-@interface ShareAction : NSObject
+@interface ShareAction : NSObject<CJDispatherProtocol>
 
 @end
 

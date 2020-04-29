@@ -9,5 +9,8 @@
 #import "ActionB.h"
 
 @implementation ActionB
-
+- (void)sel:(NSString *)sel param:(NSDictionary *)param cb:(callback)cb{
+    SEL action = NSSelectorFromString(@"test");
+    NSLog(@"222");
+}
 @end

@@ -7,7 +7,7 @@
 //
 
 #import "CJDispatcher.h"
-
+#import "CJDispatherProtocol.h"
 @implementation CJDispatcher
 + (instancetype)sharedInstance
 {
@@ -37,12 +37,25 @@
         return self;
     };
 }
-- (CJDispatcher *(^)(NSString *action ,NSDictionary *param,callback cb))dispatch{
-    return ^(NSString *action ,NSDictionary *param,callback cb){
+- (CJDispatcher *(^)(NSString *modular ,NSString *sel, NSDictionary *param,callback cb))dispatch{
+    return ^(NSString *modular ,NSString *sel, NSDictionary *param,callback cb){
+        id<CJDispatherProtocol> dipatcher = [NSClassFromString(modular) new];
+        if (dipatcher && [dipatcher respondsToSelector:@selector(sel:param:cb:)]) {
+            [dipatcher sel:sel param:param cb:cb];
+        }else{
+            if (cb) {
+                cb(nil,[NSError errorWithDomain:@"未找到对应模块" code:-1001 userInfo:nil]);
+            }
+        }
         return self;
     };
 }
 
+- (CJDispatcher *(^)(void))openUrl:(NSURL *)url param:(NSDictionary*)parma{
+    return ^(void){
+        return self;
+    };
+}
 
 
 
